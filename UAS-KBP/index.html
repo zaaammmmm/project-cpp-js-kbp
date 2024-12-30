@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Manrisku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo NeroLearn">
+                <h1>Pendukung Belajar</h1>
+            </div>
+            <nav>
+                <a href="#" onclick="confirmLogout(event)">Logout</a>
+            </nav>
+        </header>
+    </main>
+
+    <main>
+        <section id="home" class="container">
+            <div class="intro">
+                <h2>Akses Manrisku!</h2>
+                <p>
+                    Kemudahan pembelajaran dengan fitur terupdate. Jadikan Pendukung Belajar ini sebagai penyedia informasi Schedule, Pomodoro, dan Spotify sekaligus. Mudahkan pengguna dengan alat bantu yang tersedia. Coba Manrisku Sekarang!!
+                </p>
+                <button onclick="scrollToSection('pomodoro-section')">Pomodoro</button>
+                <button onclick="scrollToSection('quotes-section')">Quotes</button>
+                <button onclick="scrollToSection('tasks-section')">To Do List</button>
+                <button onclick="scrollToSection('spotify-section')">Spotify</button>
+            </div>
+            <img src="assets/hero-image.png" alt="Hero Illustration">
+        </section>
+        <section id="home" class="container1">
+            <!-- Pomodoro Timer -->
+            <div id="pomodoro-section" class="card">
+                <h2 class="text-2xl font-bold mb-4">Pomodoro Timer</h2>
+                <div class="flex justify-center items-center mb-4">
+                    <div class="text-6xl font-bold mr-4" id="pomodoro-timer">25:00</div>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded" id="start-pomodoro">Start</button>
+                        <button class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded" id="reset-pomodoro">Reset</button>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <button class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded" id="pomodoro-btn">Pomodoro</button>
+                    <button class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded" id="short-break-btn">Short Break</button>
+                    <button class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded" id="long-break-btn">Long Break</button>
+                </div>
+                <div class="text-center text-lg font-medium" id="pomodoro-status">Ready to start!</div>
+            </div>
+
+            <!-- Quotes -->
+            <div id="quotes-section" class="card">
+                <h2 class="text-2xl font-bold mb-4">Quotes</h2>
+                <div class="quotes" id="quotes-display">"Hari ini adalah kesempatan terakhir untuk membuat perubahan. Lakukan dengan penuh semangat, sambil memikirkan mimpi besar yang ingin kamu capai."</div>
+                <div class="quotes" id="quotes-display">"Perjuangan adalah bagian dari perjalanan. Nikmati setiap detik dan bayangkan betapa berharganya hasil akhirnya."</div>
+                <div class="quotes" id="quotes-display">"Bukan soal seberapa banyak waktu yang kita punya, tapi seberapa baik kita menggunakannya. Selesaikan tugasmu dengan penuh dedikasi."</div>
+                <div class="quotes" id="quotes-display">"Dalam setiap detik terakhir, ada peluang untuk keajaiban. Kerjakan dengan tekad dan biarkan hasilnya berbicara."</div>
+                <div class="quotes" id="quotes-display">"Laki-laki sejati tidak hanya berbicara, mereka bertindak. Selami pekerjaanmu dan biarkan karya yang berbicara."</div>
+            </div>
+
+            <!-- To-Do List -->
+            <div id="tasks-section" class="card">
+                <h2 class="text-2xl font-bold mb-4">To Do List</h2>
+                <form id="todo-form">
+                    <input type="text" id="todo-input" placeholder="Add a new task">
+                    <button type="submit">Add Task</button>
+                </form>
+                <ul id="todo-list"></ul>
+            </div>
+
+            <!-- Spotify -->
+            <div id="spotify-section" class="card spotify-container">
+                <h2 class="text-2xl font-bold mb-4">Spotify</h2>
+                <input type="text" id="spotify-url" placeholder="Enter Spotify playlist URL">
+                <button class="" onclick="updateSpotify()">Load Playlist</button>
+                <iframe id="spotify-iframe" src="" frameborder="0" allow="encrypted-media" class="mt-4 w-full" style="height: 80px;"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Ahmad Zamroni Trikarta. All rights reserved.
+        <div class="social-icons">
+            <a href="https://github.com/zaaammmmm/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/_0ne_in_milli0n?igsh=ZnoxZ3FuN3JpYjdo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
